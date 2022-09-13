@@ -14,21 +14,20 @@ torch.backends.cudnn.benchmark = True
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu',           default=0, type=int)
 
-parser.add_argument('--data-dir',      default='/mnt/ssd1/ImageNet', type=str)
-parser.add_argument('--batch-size',    default=256, type=int)
+parser.add_argument('--data-dir',      default='/home/jason/Desktop/data/ImageNet-1K', type=str)
+parser.add_argument('--batch-size',    default=128, type=int)
 parser.add_argument('--num-workers',   default=8, type=int)
 
-parser.add_argument('--epochs',        default=180, type=int)
+parser.add_argument('--epochs',        default=40, type=int)
 parser.add_argument('--warmup-epochs', default=5, type=int)
 parser.add_argument('--min-lr',        default=1e-8, type=float)
 
-parser.add_argument('--optim',         default='SGD', type=str)
-parser.add_argument('--lr',            default=0.1, type=float)
+parser.add_argument('--lr',            default=0.05, type=float)
 parser.add_argument('--momentum',      default=0.9, type=float)
 parser.add_argument('--weight-decay',  default=0.0001, type=float)
 
 parser.add_argument('--save-name',     default='ResNet50', type=str)
-parser.add_argument('--print-freq',    default=500, type=int)
+parser.add_argument('--print-freq',    default=2000, type=int)
 parser.add_argument('--log',           default='./logs/', type=str)
 parser.add_argument('--npy',           default='./npys/', type=str)
 args = parser.parse_args()
