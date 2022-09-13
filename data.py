@@ -11,7 +11,8 @@ IMAGENET_STD  = [0.229, 0.224, 0.225]
 
 
 def train_transform():
-    transform = transforms.Compose([transforms.RandomResizedCrop(224),
+    transform = transforms.Compose([transforms.Resize(224),
+                                    transforms.RandomCrop(224),
                                     transforms.RandomHorizontalFlip(), 
                                     transforms.ToTensor(), 
                                     transforms.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD)])
@@ -19,7 +20,7 @@ def train_transform():
     
 
 def val_transform():
-    transform = transforms.Compose([transforms.Resize(256),
+    transform = transforms.Compose([transforms.Resize(224),
                                     transforms.CenterCrop(224),
                                     transforms.ToTensor(), 
                                     transforms.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD)])
